@@ -1,0 +1,11 @@
+@import '../../../variables';
+
+.btn {
+    background-color: $color-primary !important;
+    border-color: $color-primary !important;
+    &:hover {
+        color: black;
+        background-color: white !important;
+        transition: all 0.5s ease-out;
+    }
+}

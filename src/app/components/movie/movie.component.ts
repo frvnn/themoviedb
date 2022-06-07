@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MovieComponent implements OnInit {
 
   movie:string = '/assets/movie.png'
-  
+  batman:string = 'assets/batman.jpg'
   constructor() { }
 
   ngOnInit(): void {
