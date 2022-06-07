@@ -2,11 +2,11 @@
     <div class="container-fluid flex-nowrap mt-1">
         <a class="navbar-brand" href="#">
             <img [src]="logo" alt="" width="154" height="20" class="logo d-inline-block align-text-top">
-          </a>
+        </a>
         <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar película" aria-label="Search">
+            <input class="form-control me-2" type="search" #query placeholder="Buscar película" aria-label="Search">
             <a href="" class="">
-                <img class="m-1" [src]="search" width="30" height="30" alt="search">
+                <img class="m-1" (click)="getMovies(query.value)" [src]="search" width="30" height="30" alt="search">
             </a>
         </form>
     </div>

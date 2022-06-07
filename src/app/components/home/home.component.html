@@ -14,22 +14,22 @@
             <div class="carousel-item active">
                 <img [src]="test" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-start align-items-start">
-                <h3>Título Película 1</h3>
-                <h6>Descripción de pelicula</h6>
+                <h3>{{nowPlayingList[0].title}}</h3>
+                <p class="d-none d-lg-block">{{nowPlayingList[0].overview}}</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img [src]="test" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-start align-items-start">
-                <h3>Título Película 2</h3>
-                <h6>Descripción de pelicula</h6>
+                <h3>{{nowPlayingList[1].title}}</h3>
+                <p class="d-none d-lg-block">{{nowPlayingList[1].overview}}</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img [src]="test" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-start align-items-start">
-                <h3>Título Película 3</h3>
-                <h6>Descripción de pelicula</h6>
+                <h3>{{nowPlayingList[2].title}}</h3>
+                <p class="d-none d-lg-block">{{nowPlayingList[2].overview}}</p>
                 </div>
             </div>
             </div>

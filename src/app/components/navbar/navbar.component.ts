@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +10,18 @@ export class NavbarComponent implements OnInit {
 
   logo:string = '/assets/logo.svg'
   search:string = 'assets/search.svg'
-  constructor() { }
+
+
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
+  }
+
+  getMovies(query: string) {
+    console.log(query)
+/*     this.movieService.getMovies(query).subscribe(data => {
+      console.log()
+    }) */
   }
 
 }
