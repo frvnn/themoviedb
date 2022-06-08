@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interface/movie.model';
 import { MovieService } from 'src/app/services/movie.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie',
@@ -18,20 +19,24 @@ export class MovieComponent implements OnInit {
     actor: '',
   }
 
+  id = '';
+
+
   movie:string = '/assets/movie.png'
   batman:string = 'assets/batman.jpg'
 
-  constructor( private movieService:MovieService ) {
+  constructor( private movieService:MovieService, private router: Router, private route: ActivatedRoute) {
 
 
   }
 
   ngOnInit(): void {
-    this.getMovie(512)
+    this.id = this.route.snapshot.paramMap.get('id')
+    this.getMovie(this.id)
   }
 
-  getMovie(movie_id) {
-    this.movieService.getMovie(movie_id).subscribe((data: any) => {
+  getMovie(id) {
+    this.movieService.getMovie(id).subscribe((data: any) => {
         console.log(data)
         this.datos = data
       })

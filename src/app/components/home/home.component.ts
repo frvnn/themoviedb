@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { from } from 'rxjs';
 import { Movie } from 'src/app/interface/movie.model';
 import { MovieService } from 'src/app/services/movie.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,24 +10,25 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  title = 'Carteleraa';
+  title = 'Cartelera';
 
   datos: Movie = {
     id: 0,
     title: '',
-    poster_path: '',
+    poster_path: 'https://image.tmdb.org/t/p/w500',
     overview: '',
     vote_average: 0,
     actor: ''
   }
 
-  nowPlayingList:any[] = [];
-  topRatedList:any[] = [];
+  id= ''
+
+  nowPlayingList:Movie[] = [];
+  topRatedList:Movie[] = [];
 
   test:string = 'assets/test.jpeg'
-  batman:string = 'assets/batman.jpg'
 
-  constructor(private movieService : MovieService) {
+  constructor(private movieService : MovieService, private router: Router, private route: ActivatedRoute) {
 
   }
 
@@ -34,8 +36,14 @@ export class HomeComponent implements OnInit {
     this.getNowPlaying()
     this.getTopRated()
 
+    this.id = this.route.snapshot.paramMap.get('id')
 
   }
+
+  goToMovie(id:number) {
+    this.router.navigate(['/movie',id])
+  }
+
 
   getNowPlaying() {
     this.movieService.getNowPlaying().subscribe((data: any) => {
