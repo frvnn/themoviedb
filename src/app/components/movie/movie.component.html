@@ -3,13 +3,13 @@
 <div class="container mt-4 mb-4">
     <div class="row">
         <div class="col-md-6">
-            <img [src]="movie" alt="" class="w-100">
+            <img src="https://image.tmdb.org/t/p/w500/7QPeVsr9rcFU9Gl90yg0gTOTpVv.jpg" alt="" class="w-75">
         </div>
         <div class="col-md-6">
             <div class="container pt-3 pt-lg-0 pt-md-0">
-                <h3>Titulo Película</h3>
-                <span>⭐⭐⭐</span>
-                <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sint tenetur animi dolorem! Quam ad in consequuntur dicta assumenda impedit fugiat cupiditate laudantium accusamus. Commodi incidunt alias exercitationem consectetur praesentium!</p>
+                <h2>{{datos.title}}</h2>
+                <h5>{{datos.vote_average}} ⭐</h5>
+                <p class="mt-2">{{datos.overview}}</p>
                 <button class="btn btn-primary shadow-none" routerLink="">Regresar</button>
             </div>
         </div>

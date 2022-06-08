@@ -5,9 +5,7 @@
         </a>
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" #query placeholder="Buscar película" aria-label="Search">
-            <a href="" class="">
-                <img class="m-1" (click)="getMovies(query.value)" [src]="search" width="30" height="30" alt="search">
-            </a>
+                <img class="m-1" routerLink="search" (click)="getMovies(query.value)" [src]="search" width="30" height="30" alt="search">
         </form>
     </div>
 </nav>
