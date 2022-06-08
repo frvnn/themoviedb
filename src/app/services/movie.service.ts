@@ -14,22 +14,17 @@ export class MovieService {
   
 
   constructor(private http:HttpClient) {
-    console.log('servicio persona')
-
   }
 
   getNowPlaying(): Observable<any> {
-    return this.http.get(this.BASE_URL + '/movie/now_playing' + this.API_KEY);
+    return this.http.get(`${this.BASE_URL}/movie/now_playing${this.API_KEY}`);
   }
 
   searchMovies(searchTerm: string): Observable<any> {
     return this.http.get(`${this.BASE_URL}/search/movie${this.API_KEY}&query=${searchTerm}`);
   }
-  getImages(image:string): Observable<any>{
-    return this.http.get(`${this.IMG_URL}/${image}`)
-  }
 
-  getMovie(movie_id:number): Observable<any>{
+  getMovie(movie_id:number): Observable<any> {
     return this.http.get(`${this.BASE_URL}/movie/${movie_id}${this.API_KEY}`)
   }
 

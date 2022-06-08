@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { CardMovieComponent } from './components/card-movie/card-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    MovieComponent
+    MovieComponent,
+    CardMovieComponent,
   ],
   imports: [
     BrowserModule,

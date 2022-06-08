@@ -47,14 +47,12 @@ export class HomeComponent implements OnInit {
   getNowPlaying() {
     this.movieService.getNowPlaying().subscribe((data: any) => {
       this.nowPlayingList = data.results
-      console.log(data.results)
     })
   }
 
   getTopRated() {
     this.movieService.getTopRated().subscribe((data:any) => {
       this.topRatedList = data.results
-      console.log(data)
     })
   }
 }

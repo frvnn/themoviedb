@@ -9,3 +9,7 @@
         </form>
     </div>
 </nav>
+
+<div class="container">
+    <app-card-movie *ngFor="let movie of movies" [movie]="movie"></app-card-movie>
+</div>
