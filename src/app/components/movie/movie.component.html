@@ -1,72 +1,31 @@
 <!-- Película-->
-<h1>ID: {{id}}</h1>
-<div class="container mt-4 mb-4">
-    <div class="row">
-        <div class="col-md-6">
-            <img src="https://image.tmdb.org/t/p/w500{{datos.poster_path}}" alt="" class="w-75">
-        </div>
-        <div class="col-md-6">
-            <div class="container pt-3 pt-lg-0 pt-md-0">
-                <h2>{{datos.title}}</h2>
-                <h5>{{datos.vote_average}} ⭐</h5>
-                <p class="mt-2">{{datos.overview}}</p>
-                <button class="btn btn-primary shadow-none" routerLink="">Regresar</button>
+    <div class="container mt-4 mb-4">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://image.tmdb.org/t/p/w500{{datos.poster_path}}" alt="{{datos.title}}" class="w-75">
+            </div>
+            <div class="col-md-6">
+                <div class="container pt-3 pt-lg-0 pt-md-0">
+                    <h2>{{datos.title}}</h2>
+                    <h5>{{datos.vote_average}} ⭐</h5>
+                    <p class="mt-2">{{datos.overview}}</p>
+                    <button class="btn btn-primary shadow-none" routerLink="">Regresar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Actrices-->
+    <!-- Actrices-->
 
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-2 col-6 mt-1 mb-3">
-            <div class="card">
-                <img [src]="batman" alt="" srcset="" class="card-img-top" [alt]="batman">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Actor/Actriz 1</h6>
-            </div>
-        </div>
-        <div class="col-md-2 col-6 mt-1 mb-3">
-            <div class="card">
-                <img [src]="batman" alt="" srcset="" class="card-img-top" [alt]="batman">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Actor/Actriz 2</h6>
-            </div>
-        </div>
-        <div class="col-md-2 col-6 mt-1 mb-3">
-            <div class="card">
-                <img [src]="batman" alt="" srcset="" class="card-img-top" [alt]="batman">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Actor/Actriz 3</h6>
-            </div>
-        </div>
-        <div class="col-md-2 col-6 mt-1 mb-3">
-            <div class="card">
-                <img [src]="batman" alt="" srcset="" class="card-img-top" [alt]="batman">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Actor/Actriz 4</h6>
-            </div>
-        </div>
-        <div class="col-md-2 col-6 mt-1 mb-3">
-            <div class="card">
-                <img [src]="batman" alt="" srcset="" class="card-img-top" [alt]="batman">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Actor/Actriz 5</h6>
-            </div>
-        </div>
-        <div class="col-md-2 col-6 mt-1 mb-3">
-            <div class="card">
-                <img [src]="batman" alt="" srcset="" class="card-img-top" [alt]="batman">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Actor/Actriz 6</h6>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-2 col-6 mt-1 mb-3" *ngFor="let data of staffList | slice:0:6">
+                <div class="card">
+                    <img src="https://image.tmdb.org/t/p/w500{{data.profile_path}}" srcset="" class="card-img-top" alt={{data.name}}>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">{{data.name}}</h6>
+                </div>
             </div>
         </div>
     </div>
-</div>

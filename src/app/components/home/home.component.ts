@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
     poster_path: 'https://image.tmdb.org/t/p/w500',
     overview: '',
     vote_average: 0,
-    actor: ''
   }
 
   id= ''

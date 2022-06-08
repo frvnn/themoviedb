@@ -16,7 +16,7 @@ export class MovieService {
   constructor(private http:HttpClient) {
     console.log('servicio persona')
 
-   }
+  }
 
   getNowPlaying(): Observable<any> {
     return this.http.get(this.BASE_URL + '/movie/now_playing' + this.API_KEY);
@@ -31,6 +31,10 @@ export class MovieService {
 
   getMovie(movie_id:number): Observable<any>{
     return this.http.get(`${this.BASE_URL}/movie/${movie_id}${this.API_KEY}`)
+  }
+
+  getCredits(movie_id:number): Observable<any>{
+    return this.http.get(`${this.BASE_URL}/movie/${movie_id}/credits${this.API_KEY}`)
   }
 
   getTopRated():Observable<any>{
