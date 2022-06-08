@@ -12,3 +12,14 @@ h1 {
 .card {
     cursor: pointer;
 }
+
+@media only screen and (min-width: 966px) {  
+    .carousel-item {
+        height: 400px;
+        img {
+            position: absolute;
+            top: -200px;
+            object-fit: cover;
+        }
+    }
+}  

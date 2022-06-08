@@ -3,7 +3,7 @@
     <div class="container mt-4">
         <h1>Cartelera</h1>
     </div>
-    <div class="container col col-md-6 mx-auto mt-4">
+    <div class="container carousel col col-md-12 mx-auto mt-4">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
             <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -14,14 +14,14 @@
             <div class="carousel-item active">
                 <img [src]="test" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-start align-items-start">
-                <h3>{{nowPlayingList[0].title}}</h3>
+                <h3 class="d-none d-lg-block">{{nowPlayingList[0].title}}</h3>
                 <p class="d-none d-lg-block">{{nowPlayingList[0].overview}}</p>
                 </div>
             </div>
-            <div class="carousel-item" *ngFor="let nowPlaying of nowPlayingList">
+            <div class="carousel-item" *ngFor="let nowPlaying of nowPlayingList | slice:0:2">
                 <img src="https://image.tmdb.org/t/p/w500{{nowPlaying.poster_path}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-start align-items-start">
-                <h3>{{nowPlaying.title}}</h3>
+                <h3 class="d-none d-lg-block">{{nowPlaying.title}}</h3>
                 <p class="d-none d-lg-block">{{nowPlaying.overview}}</p>
                 </div>
             </div>
