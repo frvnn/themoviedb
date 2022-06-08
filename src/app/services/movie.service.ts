@@ -32,4 +32,8 @@ export class MovieService {
   getMovie(movie_id:number): Observable<any>{
     return this.http.get(`${this.BASE_URL}/movie/${movie_id}${this.API_KEY}`)
   }
+
+  getTopRated():Observable<any>{
+    return this.http.get(`${this.BASE_URL}/movie/top_rated${this.API_KEY}`)
+  }
 }

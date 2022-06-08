@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/movie.model';
+import { Movie } from 'src/app/interface/movie.model';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getMovie(508)
+    this.getMovie(512)
   }
 
   getMovie(movie_id) {
