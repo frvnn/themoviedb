@@ -42,14 +42,12 @@ export class MovieComponent implements OnInit {
 
   getMovie(id) {
     this.movieService.getMovie(id).subscribe((data: any) => {
-        console.log(data)
         this.datos = data
       })
     }
 
   getStaff(id){
     this.movieService.getCredits(id).subscribe((data:any) =>{
-      console.log(data)
       this.staffList = data.cast
     })
   }
