@@ -9,16 +9,25 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9" aria-label="Slide 10"></button>
+
+
             </div>
             <div class="carousel-inner">
-            <div class="carousel-item active">
+<!--             <div class="carousel-item active">
                 <img [src]="test" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-start align-items-start">
                 <h3 class="d-none d-lg-block">{{nowPlayingList[0].title}}</h3>
                 <p class="d-none d-lg-block">{{nowPlayingList[0].overview}}</p>
                 </div>
-            </div>
-            <div class="carousel-item" *ngFor="let nowPlaying of nowPlayingList | slice:0:2">
+            </div> -->
+            <div class="carousel-item" [class.active]="isFirst" *ngFor="let nowPlaying of nowPlayingList| slice:0:10; index as i; first as isFirst;">
                 <img src="https://image.tmdb.org/t/p/w500{{nowPlaying.poster_path}}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-flex flex-column justify-content-start align-items-start">
                 <h3 class="d-none d-lg-block">{{nowPlaying.title}}</h3>
